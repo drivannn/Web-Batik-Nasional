@@ -1,0 +1,418 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Gaya Tombol Hamburger */
+
+.burgers {
+  display: none;
+  position: fixed;
+  z-index: 665;
+  pointer-events: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+  width: 100%;
+  background-color: white;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  z-index: 1000;
+  box-shadow:0 0 1rem rgba(17, 17, 17, 0.2) ;
+}
+
+.navbar ul li {
+
+  position: relative; /* Penting untuk posisi dropdown */
+
+  display: inline-block; /* Menampilkan item menu secara horizontal */
+
+}
+
+.navbar ul li a {
+
+  color: rgb(0, 0, 0);
+
+  padding: 14px 20px;
+
+  text-decoration: none;
+
+  display: block;
+
+}
+
+
+.navbar ul li a:hover {
+
+  background-color: #f1f1f1;
+
+}
+
+
+/* Gaya untuk dropdown */
+
+.dropdown {
+
+  display: none; /* Sembunyikan dropdown secara default */
+
+  position: absolute; /* Posisi absolut untuk menempatkan dropdown */
+
+  background-color: #ffffff;
+
+  min-width: 160px; /* Lebar minimum dropdown */
+
+  z-index: 1; /* Pastikan dropdown muncul di atas item lain */
+
+}
+
+
+.dropdown li {
+
+  display: block; /* Tampilkan item dropdown secara vertikal */
+
+}
+
+
+.navbar ul li:hover .dropdown {
+
+  display: block; /* Tampilkan dropdown saat item menu dihover */
+
+}
+
+
+.dropdown li a:hover {
+
+  background-color: #575757; /* Gaya saat hover pada item dropdown */
+
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  color: black;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  transition: 150ms ease-out;
+}
+
+.nav-links a:hover {
+  color: rgb(149, 149, 149)
+}
+
+
+.logo img {
+  height: 3rem;
+}
+
+
+.hamburger {
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  transition: 0.3s ease;
+}
+
+/* Efek saat tombol aktif (cross effect) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Gaya Menu Navigasi */
+.menu {
+  position: absolute;
+  top: 0;
+  left: -16%;  
+  height: 100vh;
+  background-color: #fff;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  padding: 1rem;
+}
+
+.menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.menu li {
+  margin: 20px 0;
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 150ms ease-out;
+}
+.menu a:hover {
+  color: rgb(149, 149, 149)
+}
+
+/* Menu aktif (muncul ke layar) */
+.menu.active {
+  left: 0;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #eaaf57, #f8f8f8);
+  overflow-x: hidden;
+  height: 1000px;
+}
+
+.container {
+
+  text-align: center;
+
+  margin-top: 50px;
+
+  opacity: 0; /* Mulai dengan opacity 0 */
+
+  transition: opacity 1s; /* Animasi transisi */
+
+}
+
+
+/* Kelas untuk menampilkan konten */
+
+.fade-in {
+
+  opacity: 1; /* Menjadi sepenuhnya terlihat */
+
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  /* background-color: red; */
+  transition: transform 2s ease; /* animasi transisi */
+}
+
+.box:last-child {
+  height: fit-content;
+}
+
+.box img{
+  height: 200px;
+ 
+  cursor: pointer;
+
+  width: 200px;
+
+  border-radius: 15px;
+
+}
+
+
+
+
+
+.content {
+  margin-top: 150px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero {
+  background: url('Batik tulis bg.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden; /* Sembunyikan bagian yang melampaui */
+}
+
+.header-content {
+
+  position: relative;
+
+  z-index: 2; /* Pastikan konten di atas latar belakang */
+}
+
+.header::before {
+
+  content: '';
+
+  position: absolute;
+
+  height: 100vh;
+
+  background-image: url('https://via.placeholder.com/1920x1080'); /* Ganti dengan URL gambar Anda */
+
+  background-size: cover;
+
+  background-position: center;
+
+  animation: slide 10s linear infinite; /* Animasi slide */
+
+}
+
+@keyframes slide {
+
+  0% {
+
+      transform: translateX(0);
+
+  }
+
+  100% {
+
+      transform: translateX(-50%); /* Geser setengah lebar gambar */
+
+  }
+
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #f9c74f;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #f1c40f;
+}
+
+/* Work Section */
+.work {
+  padding: 50px;
+  text-align: center;
+}
+
+.work h2 {
+  margin-bottom: 30px;
+}
+
+.work-item {
+  margin-bottom: 30px;
+}
+
+.work-item img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* About Section */
+.about {
+  padding: 50px;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  margin: 20px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  color: #ecf0f1;
+  margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+  color: #bdc3c7;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  color: #bdc3c7;
+}

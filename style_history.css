@@ -1,0 +1,239 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8b888;
+    color: #333;
+    margin: 0;
+    padding: 100px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 80px;
+}
+
+h3 {
+
+  margin-bottom: 20px;
+
+}
+
+p {
+
+  margin-bottom: 15px; /* Jarak antar paragraf */
+
+}
+
+h2 {
+
+  margin-top: 20px; /* Jarak atas untuk subjudul */
+
+  margin-bottom: 10px; /* Jarak bawah untuk subjudul */
+
+}
+
+p {
+
+  margin-bottom: 15px; /* Jarak antar paragraf */
+
+}
+
+ul {
+
+  margin-bottom: 15px; /* Jarak bawah untuk daftar */
+
+  padding-left: 20px; /* Memberikan indentasi pada daftar */
+
+}
+
+li {
+
+  margin-bottom: 10px; /* Jarak antar item dalam daftar */
+
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 110px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Mulai dengan opacity 0 */
+
+    transition: opacity 1s; /* Animasi transisi */
+}
+
+.fade-in {
+
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+
+}
+
+.history-item {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #c49847;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.history-item:hover {
+    background: #eaeaea;
+}
+
+.details {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-left: 5px solid #e0a24a;
+}
+
+.video-background {
+
+    position: fixed; /* Menempatkan video di belakang konten */
+
+    top: 50%;
+
+    left: 50%;
+
+    min-width: 100%; /* Memastikan video memenuhi lebar layar */
+
+    min-height: 100%; /* Memastikan video memenuhi tinggi layar */
+
+    width: auto;
+
+    height: auto;
+
+    z-index: -1; /* Menempatkan video di belakang konten */
+
+    transform: translate(-50%, -50%); /* Memusatkan video */
+
+}
+
+.content {
+
+    position: relative; /* Memungkinkan konten berada di atas video */
+
+    z-index: 1; /* Menempatkan konten di depan video */
+
+    color: white; /* Warna teks konten */
+
+    text-align: center; /* Memusatkan teks */
+
+    padding: 20px;
+
+}
+
+.navbar ul li {
+
+    position: relative; /* Penting untuk posisi dropdown */
+  
+    display: inline-block; /* Menampilkan item menu secara horizontal */
+  
+  }
+  
+  .navbar ul li a {
+  
+    color: rgb(0, 0, 0);
+  
+    padding: 14px 20px;
+  
+    text-decoration: none;
+  
+    display: block;
+  
+  }
+  
+  
+  .navbar ul li a:hover {
+  
+    background-color: #f1f1f1;
+  
+  }
+  
+  
+  /* Gaya untuk dropdown */
+  
+  .dropdown {
+  
+    display: none; /* Sembunyikan dropdown secara default */
+  
+    position: absolute; /* Posisi absolut untuk menempatkan dropdown */
+  
+    background-color: #ffffff;
+  
+    min-width: 160px; /* Lebar minimum dropdown */
+  
+    z-index: 1; /* Pastikan dropdown muncul di atas item lain */
+  
+  }
+  
+  
+  .dropdown li {
+  
+    display: block; /* Tampilkan item dropdown secara vertikal */
+  
+  }
+  
+  
+  .navbar ul li:hover .dropdown {
+  
+    display: block; /* Tampilkan dropdown saat item menu dihover */
+  
+  }
+  
+  
+  .dropdown li a:hover {
+  
+    background-color: #575757; /* Gaya saat hover pada item dropdown */
+  
+  }
+
+  footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-section {
+    margin: 20px;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-section h4 {
+    color: #ecf0f1;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section p, .footer-section ul {
+    color: #bdc3c7;
+    line-height: 1.6;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #34495e;
+    padding-top: 20px;
+  }
+  
+  .footer-bottom p {
+    color: #bdc3c7;
+  }
